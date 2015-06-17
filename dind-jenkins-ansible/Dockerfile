@@ -41,8 +41,8 @@ RUN echo deb https://get.docker.io/ubuntu docker main > /etc/apt/sources.list.d/
 RUN gpasswd -a jenkins docker
 
 # Install the magic wrapper
-ADD ./wrapdocker /usr/local/bin/wrapdocker
-RUN chmod +x /usr/local/bin/wrapdocker
+ADD ./wrapdocker /usr/local/bin/wrapdocker ./addloop.sh /usr/local/bin/addloop
+RUN chmod +x /usr/local/bin/wrapdocker /usr/local/bin/addloop
 
 ENV DOCKER_DAEMON_ARGS='--storage-opt dm.basesize=100G'
 
